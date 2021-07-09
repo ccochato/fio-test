@@ -13,26 +13,26 @@ more instructions
 
 -------------------------------------------------------------------
 
-Installing:
+Installing:\n
 First download it from the git repo:
 git://git.kernel.dk/fio.git or http://git.kernel.dk/fio.git
 
-Then building:
- $ ./configure
- $ make
- $ make install 
+Then building:\n
+ $ ./configure\n
+ $ make\n
+ $ make install\n 
 
-Finally to run fio:
- $ fio [options] [jobfile]
+Finally to run fio:\n
+ $ fio [options] [jobfile]\n
  
 --------------------------------------------------------
 
 To see some examples of seqread, ranread, randwrite and seqwrite 
-go to the ./exercises/ folder
+go to the /examples/ folder
 
 --------------------------------------------------------
 
-Now using ifconfig  to check and use the ports in the UP state.
+Now using ifconfig  to check and use the ports in the UP state.\n
 Using sequential read
 
 
