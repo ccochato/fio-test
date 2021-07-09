@@ -12,8 +12,8 @@ more instructions
 5)  do this for 1, 2, 4, 8, 16, … 64 nodes. per node fio should give u some stats. record this for further analysis and record network traffic over each node
 
 -------------------------------------------------------------------
-To install fio. 
 
+Installing:
 First download it from the git repo:
 git://git.kernel.dk/fio.git or http://git.kernel.dk/fio.git
 
@@ -23,8 +23,17 @@ Then building:
  $ make install 
 
 Finally to run fio:
- $ fio [options] [jobfile] ...
+ $ fio [options] [jobfile]
+ 
 --------------------------------------------------------
+
+To see some examples of seqread, ranread, randwrite and seqwrite 
+go to the ./exercises/ folder
+
+--------------------------------------------------------
+
+Now using ifconfig  to check and use the ports in the UP state.
+Using sequential read
 
 
 
