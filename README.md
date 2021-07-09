@@ -13,17 +13,17 @@ more instructions
 
 -------------------------------------------------------------------
 
-Installing:\n
+Installing:
 First download it from the git repo:
 git://git.kernel.dk/fio.git or http://git.kernel.dk/fio.git
 
-Then building:\n
- $ ./configure\n
- $ make\n
- $ make install\n 
+Then building:
+ $ ./configure
+ $ make
+ $ make install 
 
-Finally to run fio:\n
- $ fio [options] [jobfile]\n
+Finally to run fio:
+ $ fio [options] [jobfile]
  
 --------------------------------------------------------
 
