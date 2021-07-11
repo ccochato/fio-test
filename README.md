@@ -35,6 +35,10 @@ go to the /examples/ folder
 Now using ifconfig  to check and use the ports in the UP state.\n
 Using sequential read
 
+The results are in the folder ./seqread/ but the code just run 1 second  using sbatch.
+Ask what I am doing wrong. See seqread.sh.
+Runnig the code in my local PC it runs well and the results are like the test_n.txt file
+
 
 
 
