@@ -40,7 +40,17 @@ Ask what I am doing wrong. See seqread.sh.
 Runnig the code in my local PC it runs well and the results are like the test_n.txt file
 
 
+----------------------------------
+July 12th
 
+I implemented the suggestions and the results are in tak5 folder. 
+Please take a look and give me more suggestions.
+
+The job file is test.sh
+
+> sbatch test.sh
+
+-----------------------------------------------
 
 
 
