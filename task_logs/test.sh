@@ -13,18 +13,6 @@
 nodes=( 1 2 4 8 16 32 64)
 
 
-#chmod +x servers_bytes.sh
-
-#for i in ${nodes[*]}; do
-#  srun \
-#    -N1 \
-#    --mem=124G \
-#    
-#    bash servers_bytes.sh $i --subset $i --file $1 &
-#done
-
-#wait
-
 # general settings
 
 LOGSDIR_TOP=/users/ccocha/FIO/fio-tests/task_logs/job_logs
