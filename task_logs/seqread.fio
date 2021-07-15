@@ -1,0 +1,17 @@
+[global]
+bs=4K
+iodepth=256
+#direct=1
+ioengine=libaio
+group_reporting
+time_based=1
+runtime=60
+numjobs=1
+size=1m
+name=raw-read
+rw=read
+
+[job1]
+filename=iotest
+name=test
+
