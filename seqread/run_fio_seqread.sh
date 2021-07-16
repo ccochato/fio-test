@@ -1,19 +1,19 @@
 #!/bin/bash
 #SBATCH --partition=normal
-#SBATCH --nodes=32
+#SBATCH --nodes=4
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --wait-all-nodes=1
 #SBATCH --job-name=cmssw_m2n_iobench
 #SBATCH --time=20:00
-#SBATCH --output=/users/ccocha/FIO/fio-tests/seqread/32_node/%j.log
-#SBATCH --error=/users/ccocha/FIO/fio-tests/seqread/32_node/%j.err
+#SBATCH --output=/users/ccocha/FIO/fio-tests/seqread/4_node/%j.log
+#SBATCH --error=/users/ccocha/FIO/fio-tests/seqread/4_node/%j.err
 
 
 # general settings
-fio_njob=64
-fio_directory=/scratch/snx2000/ccocha/32_node
-LOGSDIR_TOP=/users/ccocha/FIO/fio-tests/seqread/32_node
+fio_njob=2
+fio_directory=/scratch/snx2000/ccocha/4_node
+LOGSDIR_TOP=/users/ccocha/FIO/fio-tests/seqread/4_node
 
 # based on the above
 LOGSDIR_JOB="$LOGSDIR_TOP/job_${SLURM_JOB_ID}_fiojob_$fio_njob"
@@ -23,7 +23,7 @@ LOGSDIR_JOB="$LOGSDIR_TOP/job_${SLURM_JOB_ID}_fiojob_$fio_njob"
 mkdir $LOGSDIR_JOB
 
 
-# run the stuff on each node for each task/exe
+# run the stuff on each node for each fio_njob
 srun fio_seqread.sh $LOGSDIR_JOB $fio_njob $fio_directory
 
 
