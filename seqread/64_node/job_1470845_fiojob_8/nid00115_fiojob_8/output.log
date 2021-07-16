@@ -1,0 +1,35 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 8 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=8): err= 0: pid=227356: Fri Jul 16 03:12:27 2021
+  read: IOPS=35.3k, BW=138MiB/s (144MB/s)(40.4GiB/300021msec)
+    slat (usec): min=10, max=776765, avg=214.83, stdev=1970.02
+    clat (usec): min=13, max=24668k, avg=57751.34, stdev=308110.69
+     lat (usec): min=634, max=24837k, avg=57967.09, stdev=309208.48
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    6], 40.00th=[    6], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[    6], 80.00th=[    6], 90.00th=[   27], 95.00th=[  468],
+     | 99.00th=[  793], 99.50th=[ 1167], 99.90th=[ 4212], 99.95th=[ 6074],
+     | 99.99th=[10134]
+   bw (  KiB/s): min=  184, max=1193690, per=100.00%, avg=145552.60, stdev=34180.99, samples=4757
+   iops        : min=   46, max=298422, avg=36387.83, stdev=8545.25, samples=4757
+  lat (usec)   : 20=0.01%, 50=0.01%, 750=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=81.85%, 20=5.48%, 50=5.43%
+  lat (msec)   : 100=0.08%, 250=0.01%, 500=2.98%, 750=3.05%, 1000=0.48%
+  lat (msec)   : 2000=0.44%, >=2000=0.23%
+  cpu          : usr=4.21%, sys=13.84%, ctx=749770, majf=0, minf=2365
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=10583667,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=138MiB/s (144MB/s), 138MiB/s-138MiB/s (144MB/s-144MB/s), io=40.4GiB (43.3GB), run=300021-300021msec
