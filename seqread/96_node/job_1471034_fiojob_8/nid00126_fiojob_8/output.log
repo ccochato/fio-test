@@ -1,0 +1,35 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 8 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=8): err= 0: pid=240879: Tue Jul 20 13:35:51 2021
+  read: IOPS=16.6k, BW=64.7MiB/s (67.9MB/s)(19.0GiB/300003msec)
+    slat (usec): min=10, max=3537.6k, avg=469.79, stdev=4170.40
+    clat (usec): min=16, max=17461k, avg=122722.75, stdev=425819.07
+     lat (usec): min=995, max=17517k, avg=123193.71, stdev=427383.24
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    5], 40.00th=[    5], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[    9], 80.00th=[   27], 90.00th=[  414], 95.00th=[  481],
+     | 99.00th=[ 1603], 99.50th=[ 2635], 99.90th=[ 5873], 99.95th=[ 7349],
+     | 99.99th=[10402]
+   bw (  KiB/s): min=  112, max=1039480, per=100.00%, avg=67398.69, stdev=28161.50, samples=4737
+   iops        : min=   28, max=259870, avg=16849.31, stdev=7040.38, samples=4737
+  lat (usec)   : 20=0.01%, 50=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=70.05%, 20=6.42%, 50=4.68%
+  lat (msec)   : 100=0.10%, 250=0.10%, 500=14.40%, 750=1.95%, 1000=0.51%
+  lat (msec)   : 2000=1.04%, >=2000=0.75%
+  cpu          : usr=2.37%, sys=10.28%, ctx=926555, majf=0, minf=2365
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=4969857,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=64.7MiB/s (67.9MB/s), 64.7MiB/s-64.7MiB/s (67.9MB/s-67.9MB/s), io=19.0GiB (20.4GB), run=300003-300003msec

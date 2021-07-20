@@ -1,0 +1,35 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 8 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=8): err= 0: pid=218355: Tue Jul 20 14:37:10 2021
+  read: IOPS=34.6k, BW=135MiB/s (142MB/s)(39.7GiB/300611msec)
+    slat (usec): min=10, max=248639, avg=219.23, stdev=2145.58
+    clat (usec): min=15, max=17310k, avg=58829.14, stdev=386504.93
+     lat (usec): min=723, max=17409k, avg=59049.24, stdev=387920.67
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    5], 40.00th=[    6], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[    6], 80.00th=[    6], 90.00th=[   26], 95.00th=[   28],
+     | 99.00th=[ 1099], 99.50th=[ 1385], 99.90th=[ 5873], 99.95th=[ 8356],
+     | 99.99th=[12818]
+   bw (  KiB/s): min=  224, max=1258704, per=100.00%, avg=143437.31, stdev=25971.81, samples=4769
+   iops        : min=   56, max=314676, avg=35859.07, stdev=6492.96, samples=4769
+  lat (usec)   : 20=0.01%, 50=0.01%, 750=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=84.34%, 20=5.45%, 50=5.62%
+  lat (msec)   : 100=0.01%, 250=0.01%, 500=0.50%, 750=1.41%, 1000=1.28%
+  lat (msec)   : 2000=1.06%, >=2000=0.32%
+  cpu          : usr=3.94%, sys=12.36%, ctx=467306, majf=0, minf=2364
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=10399881,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=135MiB/s (142MB/s), 135MiB/s-135MiB/s (142MB/s-142MB/s), io=39.7GiB (42.6GB), run=300611-300611msec

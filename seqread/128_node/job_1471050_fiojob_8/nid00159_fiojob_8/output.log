@@ -1,0 +1,36 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 8 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=8): err= 0: pid=6627: Tue Jul 20 14:37:10 2021
+  read: IOPS=35.5k, BW=139MiB/s (145MB/s)(40.6GiB/300019msec)
+    slat (usec): min=10, max=247902, avg=213.31, stdev=1510.10
+    clat (usec): min=10, max=10005k, avg=57461.38, stdev=236905.81
+     lat (usec): min=22, max=10011k, avg=57675.62, stdev=237736.31
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    6],
+     | 30.00th=[    6], 40.00th=[    6], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[    6], 80.00th=[    6], 90.00th=[   27], 95.00th=[  514],
+     | 99.00th=[  969], 99.50th=[ 1133], 99.90th=[ 1871], 99.95th=[ 3205],
+     | 99.99th=[ 8423]
+   bw (  KiB/s): min=  280, max=1161040, per=100.00%, avg=145089.16, stdev=28650.11, samples=4768
+   iops        : min=   70, max=290260, avg=36272.02, stdev=7162.53, samples=4768
+  lat (usec)   : 20=0.01%, 50=0.01%, 100=0.01%, 250=0.01%, 500=0.01%
+  lat (usec)   : 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=81.96%, 20=5.60%, 50=5.43%
+  lat (msec)   : 100=0.05%, 250=0.01%, 500=1.54%, 750=3.25%, 1000=1.28%
+  lat (msec)   : 2000=0.78%, >=2000=0.09%
+  cpu          : usr=4.29%, sys=14.55%, ctx=730348, majf=0, minf=2368
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=10642936,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=139MiB/s (145MB/s), 139MiB/s-139MiB/s (145MB/s-145MB/s), io=40.6GiB (43.6GB), run=300019-300019msec

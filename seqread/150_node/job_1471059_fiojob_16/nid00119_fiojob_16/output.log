@@ -1,0 +1,40 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 16 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=16): err= 0: pid=39058: Tue Jul 20 15:48:26 2021
+  read: IOPS=31.6k, BW=123MiB/s (129MB/s)(36.2GiB/300047msec)
+    slat (usec): min=10, max=485340, avg=494.82, stdev=5128.14
+    clat (usec): min=10, max=33239k, avg=128895.82, stdev=1164571.64
+     lat (usec): min=22, max=33393k, avg=129391.51, stdev=1168993.37
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    5], 40.00th=[    6], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[    6], 80.00th=[    6], 90.00th=[   17], 95.00th=[   29],
+     | 99.00th=[ 1770], 99.50th=[ 3406], 99.90th=[17113], 99.95th=[17113],
+     | 99.99th=[17113]
+   bw (  KiB/s): min=  312, max=2165184, per=100.00%, avg=128995.36, stdev=25510.13, samples=9528
+   iops        : min=   78, max=541296, avg=32248.72, stdev=6377.53, samples=9528
+  lat (usec)   : 20=0.01%, 50=0.01%, 100=0.01%, 250=0.01%, 500=0.01%
+  lat (usec)   : 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=82.44%, 20=7.73%, 50=5.49%
+  lat (msec)   : 100=0.08%, 250=0.03%, 500=0.02%, 750=0.01%, 1000=0.11%
+  lat (msec)   : 2000=3.33%, >=2000=0.77%
+  cpu          : usr=1.79%, sys=5.69%, ctx=392841, majf=0, minf=4735
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=9478388,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=123MiB/s (129MB/s), 123MiB/s-123MiB/s (129MB/s-129MB/s), io=36.2GiB (38.8GB), run=300047-300047msec

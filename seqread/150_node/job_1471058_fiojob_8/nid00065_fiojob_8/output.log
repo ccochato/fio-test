@@ -1,0 +1,35 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 8 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=8): err= 0: pid=213258: Tue Jul 20 15:40:03 2021
+  read: IOPS=5758, BW=22.5MiB/s (23.6MB/s)(6748MiB/300004msec)
+    slat (usec): min=10, max=348293, avg=1376.09, stdev=8223.74
+    clat (usec): min=14, max=35399k, avg=353901.85, stdev=1884103.26
+     lat (usec): min=538, max=35547k, avg=355279.23, stdev=1891228.55
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    5], 40.00th=[    5], 50.00th=[    6], 60.00th=[   16],
+     | 70.00th=[   17], 80.00th=[  575], 90.00th=[  844], 95.00th=[ 1200],
+     | 99.00th=[ 2089], 99.50th=[ 9329], 99.90th=[17113], 99.95th=[17113],
+     | 99.99th=[17113]
+   bw (  KiB/s): min=  184, max=1127640, per=100.00%, avg=23076.67, stdev=16539.98, samples=4780
+   iops        : min=   46, max=281910, avg=5769.04, stdev=4134.99, samples=4780
+  lat (usec)   : 20=0.01%, 50=0.01%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=58.16%, 20=12.79%, 50=4.02%
+  lat (msec)   : 100=0.13%, 250=0.12%, 500=0.19%, 750=13.58%, 1000=3.08%
+  lat (msec)   : 2000=6.86%, >=2000=1.07%
+  cpu          : usr=0.88%, sys=4.30%, ctx=428480, majf=0, minf=2366
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=1727488,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=22.5MiB/s (23.6MB/s), 22.5MiB/s-22.5MiB/s (23.6MB/s-23.6MB/s), io=6748MiB (7076MB), run=300004-300004msec

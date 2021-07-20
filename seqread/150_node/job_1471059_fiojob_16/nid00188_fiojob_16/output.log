@@ -1,0 +1,40 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 16 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=16): err= 0: pid=16734: Tue Jul 20 15:48:26 2021
+  read: IOPS=28.5k, BW=111MiB/s (117MB/s)(32.6GiB/300020msec)
+    slat (usec): min=10, max=408174, avg=549.33, stdev=4915.50
+    clat (usec): min=10, max=32091k, avg=142897.23, stdev=1088378.21
+     lat (usec): min=22, max=32218k, avg=143447.50, stdev=1092486.44
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    6], 40.00th=[    6], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[    6], 80.00th=[   17], 90.00th=[   26], 95.00th=[ 1062],
+     | 99.00th=[ 2265], 99.50th=[ 4245], 99.90th=[17113], 99.95th=[17113],
+     | 99.99th=[17113]
+   bw (  KiB/s): min=  272, max=2474048, per=100.00%, avg=115743.29, stdev=24307.15, samples=9534
+   iops        : min=   68, max=618512, avg=28935.67, stdev=6076.79, samples=9534
+  lat (usec)   : 20=0.01%, 50=0.01%, 100=0.01%, 250=0.01%, 500=0.01%
+  lat (usec)   : 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=73.66%, 20=15.82%, 50=5.04%
+  lat (msec)   : 100=0.11%, 250=0.05%, 500=0.01%, 750=0.01%, 1000=0.10%
+  lat (msec)   : 2000=3.99%, >=2000=1.20%
+  cpu          : usr=1.72%, sys=6.14%, ctx=445508, majf=0, minf=4737
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=8551462,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=111MiB/s (117MB/s), 111MiB/s-111MiB/s (117MB/s-117MB/s), io=32.6GiB (35.0GB), run=300020-300020msec

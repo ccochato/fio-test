@@ -1,0 +1,35 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 8 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=8): err= 0: pid=240560: Tue Jul 20 15:40:03 2021
+  read: IOPS=22.2k, BW=86.9MiB/s (91.1MB/s)(25.5GiB/300063msec)
+    slat (usec): min=10, max=339612, avg=347.31, stdev=2687.54
+    clat (usec): min=14, max=25591k, avg=91615.85, stdev=441705.82
+     lat (usec): min=1218, max=25703k, avg=91964.14, stdev=443226.15
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    5], 40.00th=[    6], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[   17], 80.00th=[   17], 90.00th=[   33], 95.00th=[  642],
+     | 99.00th=[ 1485], 99.50th=[ 1720], 99.90th=[ 3742], 99.95th=[ 8423],
+     | 99.99th=[15771]
+   bw (  KiB/s): min=  144, max=1119752, per=100.00%, avg=91027.87, stdev=25953.73, samples=4768
+   iops        : min=   36, max=279940, avg=22756.50, stdev=6488.44, samples=4768
+  lat (usec)   : 20=0.01%, 50=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=65.92%, 20=21.51%, 50=4.56%
+  lat (msec)   : 100=0.21%, 250=0.08%, 500=0.08%, 750=3.35%, 1000=1.07%
+  lat (msec)   : 2000=2.99%, >=2000=0.25%
+  cpu          : usr=2.74%, sys=11.25%, ctx=508655, majf=0, minf=2365
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=6674542,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=86.9MiB/s (91.1MB/s), 86.9MiB/s-86.9MiB/s (91.1MB/s-91.1MB/s), io=25.5GiB (27.3GB), run=300063-300063msec

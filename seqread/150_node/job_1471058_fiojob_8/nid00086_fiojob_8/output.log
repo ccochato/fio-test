@@ -1,0 +1,35 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 8 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=8): err= 0: pid=16543: Tue Jul 20 15:40:04 2021
+  read: IOPS=33.7k, BW=132MiB/s (138MB/s)(38.6GiB/300690msec)
+    slat (usec): min=10, max=277292, avg=225.58, stdev=3804.81
+    clat (usec): min=17, max=35218k, avg=60377.97, stdev=904363.76
+     lat (usec): min=905, max=35350k, avg=60604.36, stdev=907816.55
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    5], 40.00th=[    5], 50.00th=[    5], 60.00th=[    5],
+     | 70.00th=[    6], 80.00th=[    6], 90.00th=[   17], 95.00th=[   27],
+     | 99.00th=[  986], 99.50th=[ 1418], 99.90th=[11610], 99.95th=[17113],
+     | 99.99th=[17113]
+   bw (  KiB/s): min=  144, max=1216606, per=100.00%, avg=139114.53, stdev=28238.60, samples=4765
+   iops        : min=   36, max=304151, avg=34778.52, stdev=7059.65, samples=4765
+  lat (usec)   : 20=0.01%, 50=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=86.04%, 20=5.55%, 50=5.73%
+  lat (msec)   : 100=0.02%, 250=0.01%, 500=0.03%, 750=1.25%, 1000=0.40%
+  lat (msec)   : 2000=0.79%, >=2000=0.19%
+  cpu          : usr=3.67%, sys=10.65%, ctx=259698, majf=0, minf=2367
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=10130038,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=132MiB/s (138MB/s), 132MiB/s-132MiB/s (138MB/s-138MB/s), io=38.6GiB (41.5GB), run=300690-300690msec

@@ -1,0 +1,35 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 8 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=8): err= 0: pid=22923: Tue Jul 20 15:40:03 2021
+  read: IOPS=33.1k, BW=129MiB/s (135MB/s)(37.8GiB/300013msec)
+    slat (usec): min=10, max=326346, avg=230.12, stdev=2398.48
+    clat (usec): min=11, max=31668k, avg=61654.55, stdev=486259.68
+     lat (usec): min=676, max=31800k, avg=61885.58, stdev=488032.92
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    5], 40.00th=[    6], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[    6], 80.00th=[    6], 90.00th=[   26], 95.00th=[  542],
+     | 99.00th=[ 1167], 99.50th=[ 1469], 99.90th=[ 2333], 99.95th=[ 8221],
+     | 99.99th=[17113]
+   bw (  KiB/s): min=  216, max=1186936, per=100.00%, avg=135694.97, stdev=31482.23, samples=4758
+   iops        : min=   54, max=296734, avg=33923.52, stdev=7870.55, samples=4758
+  lat (usec)   : 20=0.01%, 50=0.01%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=81.17%, 20=7.84%, 50=5.38%
+  lat (msec)   : 100=0.05%, 250=0.01%, 500=0.10%, 750=3.43%, 1000=0.62%
+  lat (msec)   : 2000=1.26%, >=2000=0.14%
+  cpu          : usr=3.86%, sys=12.80%, ctx=541076, majf=0, minf=2367
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=9917382,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=129MiB/s (135MB/s), 129MiB/s-129MiB/s (135MB/s-135MB/s), io=37.8GiB (40.6GB), run=300013-300013msec

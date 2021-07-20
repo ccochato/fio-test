@@ -1,0 +1,35 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 8 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=8): err= 0: pid=254907: Tue Jul 20 15:40:03 2021
+  read: IOPS=26.8k, BW=105MiB/s (110MB/s)(30.7GiB/300014msec)
+    slat (usec): min=10, max=379944, avg=286.17, stdev=2103.87
+    clat (usec): min=15, max=16539k, avg=76039.39, stdev=317991.34
+     lat (usec): min=765, max=16547k, avg=76326.53, stdev=319031.39
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    6], 40.00th=[    6], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[   17], 80.00th=[   17], 90.00th=[   33], 95.00th=[  609],
+     | 99.00th=[ 1267], 99.50th=[ 1502], 99.90th=[ 2333], 99.95th=[ 6678],
+     | 99.99th=[ 9866]
+   bw (  KiB/s): min=  192, max=1226240, per=100.00%, avg=110436.46, stdev=24255.20, samples=4761
+   iops        : min=   48, max=306560, avg=27608.93, stdev=6063.80, samples=4761
+  lat (usec)   : 20=0.01%, 50=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=67.13%, 20=20.17%, 50=4.70%
+  lat (msec)   : 100=0.15%, 250=0.09%, 500=0.05%, 750=4.94%, 1000=1.03%
+  lat (msec)   : 2000=1.59%, >=2000=0.14%
+  cpu          : usr=3.29%, sys=13.24%, ctx=617313, majf=0, minf=2364
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=8041742,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=105MiB/s (110MB/s), 105MiB/s-105MiB/s (110MB/s-110MB/s), io=30.7GiB (32.9GB), run=300014-300014msec

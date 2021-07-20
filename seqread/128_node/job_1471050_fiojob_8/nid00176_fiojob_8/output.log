@@ -1,0 +1,35 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 8 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=8): err= 0: pid=254545: Tue Jul 20 14:37:10 2021
+  read: IOPS=35.8k, BW=140MiB/s (147MB/s)(41.1GiB/300499msec)
+    slat (usec): min=10, max=229661, avg=211.19, stdev=2007.73
+    clat (usec): min=14, max=15455k, avg=56832.79, stdev=351993.87
+     lat (usec): min=967, max=15518k, avg=57044.85, stdev=353270.68
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    6], 40.00th=[    6], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[    6], 80.00th=[    6], 90.00th=[   26], 95.00th=[   37],
+     | 99.00th=[ 1028], 99.50th=[ 1284], 99.90th=[ 5537], 99.95th=[ 7752],
+     | 99.99th=[11476]
+   bw (  KiB/s): min=  168, max=1308824, per=100.00%, avg=146549.60, stdev=36592.90, samples=4766
+   iops        : min=   42, max=327206, avg=36637.38, stdev=9148.22, samples=4766
+  lat (usec)   : 20=0.01%, 50=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=83.17%, 20=6.38%, 50=5.53%
+  lat (msec)   : 100=0.06%, 250=0.02%, 500=0.47%, 750=2.05%, 1000=1.22%
+  lat (msec)   : 2000=0.80%, >=2000=0.30%
+  cpu          : usr=4.09%, sys=13.12%, ctx=510287, majf=0, minf=2365
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=10764364,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=140MiB/s (147MB/s), 140MiB/s-140MiB/s (147MB/s-147MB/s), io=41.1GiB (44.1GB), run=300499-300499msec

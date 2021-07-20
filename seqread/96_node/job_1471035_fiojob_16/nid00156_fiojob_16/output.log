@@ -1,0 +1,39 @@
+test: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=256
+...
+fio-3.27
+Starting 16 processes
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+seq-read: Laying out IO file (1 file / 1024MiB)
+
+test: (groupid=0, jobs=16): err= 0: pid=227162: Tue Jul 20 13:44:17 2021
+  read: IOPS=9724, BW=38.0MiB/s (39.8MB/s)(11.2GiB/302829msec)
+    slat (usec): min=10, max=6329.9k, avg=1623.99, stdev=17887.94
+    clat (usec): min=12, max=32978k, avg=415803.82, stdev=2306809.73
+     lat (usec): min=1345, max=33139k, avg=417428.76, stdev=2315453.13
+    clat percentiles (msec):
+     |  1.00th=[    5],  5.00th=[    5], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    5], 40.00th=[    5], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[   16], 80.00th=[   17], 90.00th=[   26], 95.00th=[  902],
+     | 99.00th=[13892], 99.50th=[17113], 99.90th=[17113], 99.95th=[17113],
+     | 99.99th=[17113]
+   bw (  KiB/s): min=  128, max=2390600, per=100.00%, avg=39853.20, stdev=16304.27, samples=9429
+   iops        : min=   32, max=597650, avg=9963.30, stdev=4076.07, samples=9429
+  lat (usec)   : 20=0.01%, 50=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=67.01%, 20=22.26%, 50=4.36%
+  lat (msec)   : 100=0.43%, 250=0.23%, 500=0.16%, 750=0.27%, 1000=0.46%
+  lat (msec)   : 2000=1.10%, >=2000=3.74%
+  cpu          : usr=0.58%, sys=2.21%, ctx=161489, majf=0, minf=4739
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=2944774,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=256
+
+Run status group 0 (all jobs):
+   READ: bw=38.0MiB/s (39.8MB/s), 38.0MiB/s-38.0MiB/s (39.8MB/s-39.8MB/s), io=11.2GiB (12.1GB), run=302829-302829msec
