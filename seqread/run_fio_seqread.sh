@@ -1,19 +1,19 @@
 #!/bin/bash
 #SBATCH --partition=normal
-#SBATCH --nodes=4
+#SBATCH --nodes=64
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --wait-all-nodes=1
 #SBATCH --job-name=cmssw_m2n_iobench
-#SBATCH --time=20:00
-#SBATCH --output=/users/ccocha/FIO/fio-tests/seqread/4_node/%j.log
-#SBATCH --error=/users/ccocha/FIO/fio-tests/seqread/4_node/%j.err
+#SBATCH --time=40:00
+#SBATCH --output=/users/ccocha/FIO/fio-tests/seqread/64_node/%j.log
+#SBATCH --error=/users/ccocha/FIO/fio-tests/seqread/64_node/%j.err
 
 
 # general settings
-fio_njob=2
-fio_directory=/scratch/snx2000/ccocha/4_node
-LOGSDIR_TOP=/users/ccocha/FIO/fio-tests/seqread/4_node
+fio_njob=16
+fio_directory=/scratch/snx2000/ccocha/64_node
+LOGSDIR_TOP=/users/ccocha/FIO/fio-tests/seqread/64_node
 
 # based on the above
 LOGSDIR_JOB="$LOGSDIR_TOP/job_${SLURM_JOB_ID}_fiojob_$fio_njob"
