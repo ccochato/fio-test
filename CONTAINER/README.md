@@ -1,6 +1,6 @@
 
-The script run_all.sh use the Dockerfile to create the ccocha/test2 image and perform benchmarking in local machine
-The results are stored in iotest folder
+The script run_all.sh uses the Dockerfile to create the ccocha/test2 image and perform benchmarking in local machine.
+The results are stored in iotest folder.
 
 $bash run_all.sh
 
