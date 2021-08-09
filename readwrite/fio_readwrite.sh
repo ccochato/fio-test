@@ -25,7 +25,7 @@ cd $WORKDIR
 # run fio for instance 0
 if [ $INSTANCE -eq 0 ]
 then
-    FIO_NUM_JOBS=$FIO_NJOB FIO_DIRECTORY=$FIO_DIRECT fio /users/ccocha/FIO/fio-tests/readwrite/readwrite.fio >> output.log &
+    FIO_NUM_JOBS=$FIO_NJOB FIO_DIRECTORY=$FIO_DIRECT fio --output-format=json --output=output.json /users/ccocha/FIO/fio-tests/readwrite/readwrite.fio &
 
     # loop and collect network usage 
     # break out when the aboe process is finished
@@ -47,8 +47,8 @@ then
     
 else
     # for all the other instances
-    FIO_NUM_JOBS=$FIO_NJOB FIO_DIRECTORY=$FIO_DIRECT  fio /users/ccocha/FIO/fio-tests/readwrite/readwrite.fio >> output.log
+    FIO_NUM_JOBS=$FIO_NJOB FIO_DIRECTORY=$FIO_DIRECT  fio --output-format=json --output=output.json /users/ccocha/FIO/fio-tests/readwrite/readwrite.fio
 fi
 
 # move the logs if exist
-mv output.log $LOGSDIR_FIO_NJOB/
+mv output.json $LOGSDIR_FIO_NJOB/

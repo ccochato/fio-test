@@ -1,7 +1,7 @@
 [randrw]
 bs=4K
-iodepth=256
-direct=0
+iodepth=32
+direct=1
 ioengine=libaio
 group_reporting
 time_based=1

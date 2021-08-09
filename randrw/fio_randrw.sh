@@ -10,7 +10,7 @@ INSTANCE=$SLURM_LOCALID
 
 
 # various variables
-WORKDIR="/var/tmp/fiorun__$FIO_NJOB"
+WORKDIR="/tmp/fiorun__$FIO_NJOB"
 LOGSDIR_FIO_NJOB="$LOGSDIR_JOB/${THISHOST}_fiojob_$FIO_NJOB"
 
 # create the logs directory 

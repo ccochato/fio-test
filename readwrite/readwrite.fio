@@ -1,7 +1,7 @@
 [readwrite]
 bs=4K
-iodepth=256
-direct=0
+iodepth=32
+direct=1
 ioengine=libaio
 group_reporting
 time_based=1
@@ -12,7 +12,4 @@ name=readwrite
 rw=readwrite
 
 directory=${FIO_DIRECTORY}
-#filename=iotest
 filename_format=$jobname.${SLURM_NODEID}.$jobnum.$filenum	
-
-

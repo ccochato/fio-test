@@ -1,18 +1,16 @@
 [rand-read]
-bs=4K
-iodepth=256
-direct=0
+bs=16K
+iodepth=32
+direct=1
 ioengine=libaio
 group_reporting
 time_based=1
 runtime=300
 numjobs=${FIO_NUM_JOBS}
 size=1g
-name=raw-read
+name=rand-read
 rw=randread
 
 directory=${FIO_DIRECTORY}
-#filename=iotest
-filename_format=$jobname.${SLURM_NODEID}.$jobnum.$filenum	
-name=test
+filename_format=$jobname.${SLURM_NODEID}.$jobnum.$filenum
 
