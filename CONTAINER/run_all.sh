@@ -6,8 +6,6 @@ fio_workdir=/tmp/fio-data
 
 #create the image ccocha/test2 using the Dockerfile
 sudo docker build -t ccocha/test2 .
-
-#folder to store results
 mkdir `pwd`/iotest
 
 for j in ${fio_bs[*]};do
@@ -17,7 +15,6 @@ for j in ${fio_bs[*]};do
 		output=`pwd`/iotest/${j}_bs/${i}_fiojob
 		mkdir $output
 		sudo rm -rf $fio_workdir/*
-		
 		#run the Dockerfile		
 		sudo docker run -v  $fio_workdir:/iotest/work  ccocha/test2 --numjobs=$i --bs=$j --output-format=json --output=output.json /iotest/seqread.fio
 		#save the results
