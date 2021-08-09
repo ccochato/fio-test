@@ -6,6 +6,7 @@ fio_workdir=/tmp/fio-data
 
 #create the image ccocha/test2 using the Dockerfile
 sudo docker build -t ccocha/test2 .
+#directory to save the results
 mkdir `pwd`/iotest
 
 for j in ${fio_bs[*]};do
