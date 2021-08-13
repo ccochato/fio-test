@@ -1,0 +1,36 @@
+# image            : index.docker.io/ccocha/fio_seqread:latest
+# cache directory  : "/scratch/snx2000/ccocha/.sarus/cache"
+# temp directory   : "/tmp"
+# images directory : "/scratch/snx2000/ccocha/.sarus/images"
+> save image layers ...
+> found in cache : sha256:e9cf57be1e04ae0431b5bf3a998ae68529e4d77437981074d7b832eb959f72f5
+> found in cache : sha256:28a72513f6a9d5f97b9f036237b5cc362ee0951145e812ff69d5ea86f0fca7a8> found in cache : sha256:b6c4850f0c2925662f246239964bdbc47f9c1dff416b0f14e117e7d336ab948d
+
+> found in cache : sha256:dddc3c2118c369cf7b5c8a4567996a17f7f16904ed2a13644f691e1e0d1679ca
+> found in cache : sha256:16ec32c2132b43494832a05f2b02f7a822479f8250c173d0ab27b3de78b2f058
+> found in cache : sha256:45839e53ddb4d956f9e560dc22e970280c608a518613f19c091d300bc2af4e3f
+> expanding image layers ...
+> extracting     : "/scratch/snx2000/ccocha/.sarus/cache/sha256:16ec32c2132b43494832a05f2b02f7a822479f8250c173d0ab27b3de78b2f058.tar"
+> extracting     : "/scratch/snx2000/ccocha/.sarus/cache/sha256:b6c4850f0c2925662f246239964bdbc47f9c1dff416b0f14e117e7d336ab948d.tar"
+> extracting     : "/scratch/snx2000/ccocha/.sarus/cache/sha256:45839e53ddb4d956f9e560dc22e970280c608a518613f19c091d300bc2af4e3f.tar"
+> extracting     : "/scratch/snx2000/ccocha/.sarus/cache/sha256:e9cf57be1e04ae0431b5bf3a998ae68529e4d77437981074d7b832eb959f72f5.tar"
+> extracting     : "/scratch/snx2000/ccocha/.sarus/cache/sha256:28a72513f6a9d5f97b9f036237b5cc362ee0951145e812ff69d5ea86f0fca7a8.tar"
+> extracting     : "/scratch/snx2000/ccocha/.sarus/cache/sha256:dddc3c2118c369cf7b5c8a4567996a17f7f16904ed2a13644f691e1e0d1679ca.tar"
+> make squashfs image: "/scratch/snx2000/ccocha/.sarus/images/index.docker.io/ccocha/fio_seqread/latest.squashfs"
+
+
+Batch Job Summary Report (version 21.01.1) for Job "fio_seqread" (1477662) on tave
+
+Job information (1/2)
+-----------------------------------------------------------------------------------------------------
+             Submit            Eligible               Start                 End    Elapsed Time limit
+------------------- ------------------- ------------------- ------------------- ---------- ----------
+2021-08-12T06:28:59 2021-08-12T07:10:54 2021-08-12T07:10:54 2021-08-12T07:17:42   00:06:48   01:00:00
+-----------------------------------------------------------------------------------------------------
+
+Job information (2/2)
+-------------------------------------------------------------
+    Username      Account    Partition   NNodes        Energy
+------------ ------------ ------------ -------- -------------
+      ccocha         g138       normal        4    209.803 kJ
+
